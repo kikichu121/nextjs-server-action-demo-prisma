@@ -1,3 +1,4 @@
+import SubmitButton from "@/app/components/SubmitButton";
 import { db } from "@/app/db";
 import { revalidatePath } from "next/cache";
 import React from "react";
@@ -49,13 +50,8 @@ export default async function MoviesCmt({ params: { id } }: MovieidProps) {
             name="comment"
             className="w-full border-teal-200 rounded-lg p-2"
           ></textarea>
-          <input type="hidden" name="id" value={id} />
-          <button
-            type="submit"
-            className="bg-teal-400 px-4 py-3 rounded-lg text-white mt-2"
-          >
-            Add Comment{" "}
-          </button>
+          <input type="hidden" name="id" value={id} defaultValue={""} />
+          <SubmitButton />
         </form>
 
         <div className="mt-5 flex flex-col gap-y-3">
